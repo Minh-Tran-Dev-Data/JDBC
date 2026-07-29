@@ -15,3 +15,5 @@ HELP.md
 *.log
 #file git
 .gitattributes
+#Test
+src/test/java/com/example/demo/DemoApplicationTests.java
