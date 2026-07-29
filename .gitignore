@@ -1,0 +1,17 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Maven
+target/
+.mvn/
+mvnw
+mvnw.cmd
+
+# Spring Boot
+HELP.md
+
+# Logs
+*.log
+#file git
+.gitattributes
