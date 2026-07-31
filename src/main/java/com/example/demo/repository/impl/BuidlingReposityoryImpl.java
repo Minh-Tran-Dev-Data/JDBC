@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 @Repository
 public class BuidlingReposityoryImpl implements BuildingRepository {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/estatebasic";
@@ -15,14 +17,9 @@ public class BuidlingReposityoryImpl implements BuildingRepository {
 
 
     @Override
-    public List<BuildingEntity> findAll(String name, Integer districtId) {
+    public List<BuildingEntity> findAll(Map<String, Object> parrams) {
         StringBuilder sql = new StringBuilder("SELECT * FROM building b where 1=1");
-        if(name!=null && !name.equals("")){
-            sql.append(" AND b.name like '%"+name+"%' ");
-        }
-        if(districtId != null){
-            sql.append(" AND b.districtid = "+districtId+" ");
-        }
+
         List<BuildingEntity> result = new ArrayList<>();
 
         try (
