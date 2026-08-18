@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface BuildingRepository {
-    List<BuildingEntity> findAll (Map<String, Object> parrams);
+    List<BuildingEntity> findAll (Map<String, Object> parrams , List<String> typeCode);
 
 }
 

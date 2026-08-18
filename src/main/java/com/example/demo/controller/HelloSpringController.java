@@ -44,13 +44,13 @@ public class HelloSpringController {
     @Autowired
     private BuildingService buildingService;
     @GetMapping("/building/")
-    public List<BuildingDTO> getBuilding(@RequestParam Map<String,Object> params) {
-    List<BuildingDTO> result = buildingService.findAll(params);
+    public List<BuildingDTO> getBuilding(@RequestParam Map<String,Object> params,@RequestParam List<String> typeCode) {
+    List<BuildingDTO> result = buildingService.findAll(params,typeCode);
         return result;
 
 }
     public void valiDate (BuildingDTO bd)  {
-        if(bd.getName() == null || bd.getName().equals("")||bd.getNumberOfBasement() == null){
+        if(bd.getName() == null || bd.getName().equals("")){
             throw new FieldRequiredException("name or numberOfBasement is null");
         }
     }
